@@ -1,0 +1,42 @@
+<div class="m-4" id="<%= dom_id cocktail %>">  
+  <div class="w-full rounded-md p-5 border-b-4 border-black bg-zinc-50">
+    <div class="rounded-md overflow-hidden m-4"> 
+      <% cocktail.images.each do |image| %>
+        <%= link_to cocktail do%>
+          <%= image_tag image.blob.representation(resize_to_fill:[250,250]), class:"rounded-l w-full"%>
+        <% end %>
+      <% end %>
+    </div> 
+                  
+    <div class="pb-4 text-center">
+      <%# <strong class="">Name:</strong> %>
+      <h1 class="text-gray-900 text-xl font-bold"><%= cocktail.name%></h1>
+    </div>
+  </div>
+</div>
+  <%# <p class=""> %>
+    <%# <strong class="block font-medium mb-1">Type:</strong> %>
+    <%# <h1 class="text-gray-900 text-l mb-1"><%= cocktail.variety</h1> %>
+  <%# </p> %>
+<%# </div> %>
+
+
+  <%# <% if action_name != "show" %>
+    <%# <%= link_to "Show this cocktail", cocktail, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%# <%= link_to 'Edit this cocktail', edit_cocktail_path(cocktail), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %> 
+    <%# <hr class="mt-6"> %>
+  <%# <% end %>
+  <%# <p class="my-5">
+    <strong class="block font-medium mb-1">Ingredients:</strong>
+    <%= cocktail.ingredients %>
+  <%# </p> %>
+
+  <%# <p class="my-5"> %>
+    <%# <strong class="block font-medium mb-1">Build:</strong> %>
+    <%# <%= cocktail.build %>
+  <%# </p> %>
+
+  <%# <p class="my-5"> %>
+    <%# <strong class="block font-medium mb-1">User:</strong> %>
+    <%# <%= cocktail.user_id %>
+  <%# </p> %>

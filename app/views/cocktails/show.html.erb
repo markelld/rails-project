@@ -1,0 +1,55 @@
+<div class="">
+  <div class="">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium   inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%# <%= render @cocktail %> 
+      <div class="flex flex-wrap justify-center mx-12 my-12 bg-zinc-50 rounded-lg  "> 
+        <div class="m-4"> 
+        <% @cocktail.images.each do |image| %>
+          <%= link_to @cocktail do%>
+            <%= image_tag image.blob.representation(resize_to_fill: [400,400]), class:" mt-6 rounded drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"%>
+          <% end %>
+        <% end %>
+        </div> 
+        <div class="m-6"> 
+          <div class="text-center">
+            <h1 class="text-gray-900 text-xl font-bold m-6" ><%= @cocktail.name%></h1>
+          </div>
+          
+        <p class="my-3">
+          <strong class="block font-medium font-bold mb-3">Ingredients</strong>
+          <%= @cocktail.ingredients %>
+        </p>
+
+        <p class="my-3">
+          <strong class="block font-medium font-bold mb-3">Build</strong>
+          <%= @cocktail.build %>
+        </p>
+        <% if @cocktail.user == current_user %> 
+        <div class=" flex justify-center mt-6">
+          <div>
+            <%= link_to edit_cocktail_path(@cocktail) do %>  
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            <% end %>
+          </div> 
+          <div>
+            <%= button_to cocktail_path(@cocktail), method: :delete do %> 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            <% end %> 
+          </div>
+        </div>
+        </div>
+          <%# <%= link_to 'Back to cocktails', cocktails_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        <% end %>
+      </div>   
+  </div>
+</div>
+
+          
+          

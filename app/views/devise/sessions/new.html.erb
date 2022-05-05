@@ -1,0 +1,37 @@
+<div class="w-full min-h-screen flex flex-col sm:justify-center items-center pt-2 sm:pt-0"> 
+  <div class=" bg-gray-50 w-11/12 sm:max-w-lg p-5 mx-auto pb-6 rounded-lg m-6">
+    <h2 class="mb-6 text-center text-5xl font-extrabold">Welcome!</h2> 
+    <div class="p-4">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-4">
+          <%= f.label :Email,class:"block" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.label :password,class:"block" %>
+          <%= f.password_field :password, autocomplete: "current-password", class:"py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="mt-6">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions mt-6">
+          <%= f.submit "Log in", class:"w-full inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition" %>
+        </div>
+        <% end %> 
+
+      <div class="mt-6 flex  flex-wrap items-center justify-between">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+</div>
+</div>
+      
+
+
+
