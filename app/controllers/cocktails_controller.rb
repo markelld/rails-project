@@ -1,12 +1,13 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: %i[ show edit update destroy ]
-
+  # def profile  
+  # end
   # GET /cocktails or /cocktails.json
   def index
     # @cocktails = Cocktail.all 
     @q = Cocktail.ransack(params[:q])
     @cocktails = @q.result(distinct: true)
-  end
+  end 
 
   # GET /cocktails/1 or /cocktails/1.json
   def show

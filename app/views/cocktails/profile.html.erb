@@ -1,4 +1,7 @@
-<div class="m-4" id="<%= dom_id cocktail %>">  
+<% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium   inline-block" id="notice"><%= notice %></p>
+<% end %> 
+<% if current_user == cocktail.user_id.each do |cocktail| %> 
   <div class="w-full rounded-md p-5 border-b-4 border-black bg-zinc-50">
     <div class="rounded-md overflow-hidden m-4"> 
       <% cocktail.images.each do |image| %>
@@ -13,7 +16,8 @@
       <h1 class="text-gray-900 text-xl font-bold"><%= cocktail.name%></h1>  
 
       <h1 class="text-gray-900 text-xl font-bold">@<%= cocktail.user.username%></h1>
-    
     </div>
   </div>
-</div>
+</div> 
+<% end %>
+ 
