@@ -11,9 +11,9 @@
     <div class="pb-4 text-center">
       <%# <strong class="">Name:</strong> %>
       <h1 class="text-gray-900 text-xl font-bold"><%= cocktail.name%></h1>  
-
+      <%= link_to profile_show_path do %>
       <h1 class="text-gray-900 text-xl font-bold">@<%= cocktail.user.username%></h1>
-    
+      <% end %>
     </div>
   </div>
 </div>
