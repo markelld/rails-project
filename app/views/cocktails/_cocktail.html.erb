@@ -3,7 +3,7 @@
     <div class="rounded-md overflow-hidden m-4"> 
       <% cocktail.images.each do |image| %>
         <%= link_to cocktail do%>
-          <%= image_tag image.blob.representation(resize_to_fill:[250,250]), class:"rounded-l w-full"%>
+          <%= image_tag image.blob.representation(resize_to_fill:[270,270]), class:"rounded-l w-full"%>
         <% end %>
       <% end %>
     </div> 
