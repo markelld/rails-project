@@ -10,7 +10,13 @@
   <%# <div> %>
     <%# <%= f.label :username %>
     <%# <%= f.username_field :username, autofocus: true, autocomplete: "",class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"   %>
-  <%# </div> %>
+  <%# </div> %> 
+  <div class="mb-5"> 
+    <%= f.label :username %><br/>
+     <%= f.text_field :username, autofocus: true, class:" rounded-md py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" %>
+  </div>
+
+  
   <div class="mb-5">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
